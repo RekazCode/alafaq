@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة الآفاق | وكيل معتمد لشركات عالمية</title>
+    
+    <!-- خطوط جوجل (Cairo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* إعدادات عامة */
+        :root {
+            --primary-color: #1a365d; 
+            --secondary-color: #eab308; 
+            --light-bg: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* الترويسة */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-btn {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: var(--transition);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .contact-btn:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+        }
+
+        /* القسم الرئيسي */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--secondary-color);
+        }
+
+        /* قسم الوكالات (جديد) */
+        .agencies {
+            padding: 60px 0;
+            background-color: var(--white);
+            border-bottom: 1px solid #eee;
+        }
+
+        .agencies-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .agency-item {
+            text-align: center;
+            padding: 0;
+            background: var(--light-bg);
+            border-radius: 12px;
+            min-width: 250px;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .agency-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .agency-img {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .agency-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .agency-item:hover .agency-img img {
+            transform: scale(1.05);
+        }
+
+        .agency-info {
+            padding: 20px;
+        }
+
+        .agency-badge {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 2px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .agency-item h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .agency-item p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* العناوين المشتركة */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+
+        /* قسم من نحن */
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* الرؤية والأهداف */
+        .vision-goals {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .vg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .vg-card {
+            background: var(--light-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .vg-card:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .vg-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .vg-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* الخدمات */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-building { background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        .img-sanitary { background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        .img-tools { background-image: url('https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        .service-body {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .service-body h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* اتصل بنا */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .contact-box i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-box h4 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            background: #0a192f;
+            color: #8892b0;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .about-content { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="شعار شركة الآفاق" style="height: 55px; width: auto;">
+                الآفاق للاستيراد
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#agencies">الوكالات</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#products">المنتجات</a></li>
+                    <li><a href="#contact">التواصل</a></li>
+                </ul>
+            </nav>
+            <a href="tel:0926077470" class="contact-btn">إتصل الآن</a>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>شركة الآفاق <span>للاستيراد</span></h1>
+            <p>الوكيل والموزع المعتمد لأكبر الشركات العالمية والمحلية في مواد البناء والمعدات</p>
+        </div>
+    </section>
+
+    <!-- قسم الوكالات الجديد -->
+    <section class="agencies" id="agencies">
+        <div class="container">
+            <div class="section-title">
+                <h2>وكالاتنا المعتمدة</h2>
+                <p>نفخر بكوننا شركاء نجاح لكبرى العلامات التجارية العالمية</p>
+            </div>
+            <div class="agencies-flex">
+                <div class="agency-item">
+                    <div class="agency-img">
+                        <img src="VIBER.jpeg" alt="شركة فايبر">
+                    </div>
+                    <div class="agency-info">
+                        <span class="agency-badge">موزع معتمد</span>
+                        <h3>VIBER</h3>
+                        <p>شركة فايبر الرائدة</p>
+                    </div>
+                </div>
+                <div class="agency-item">
+                    <div class="agency-img">
+                        <img src="GOLDEN.jpg" alt="شركة غولدن">
+                    </div>
+                    <div class="agency-info">
+                        <span class="agency-badge">وكيل حصري</span>
+                        <h3>GOLDEN</h3>
+                        <p>شركة غولدن المصرية للسخانات</p>
+                    </div>
+                </div>
+                <div class="agency-item">
+                    <div class="agency-img">
+                        <img src="VERON.jpg" alt="شركة فيرون">
+                    </div>
+                    <div class="agency-info">
+                        <span class="agency-badge">وكيل معتمد</span>
+                        <h3>VERON</h3>
+                        <p>منتجات فيرون العالمية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-title" style="text-align: right;">
+                        <h2 style="display: block; width: fit-content; margin-left: auto; margin-right: 0;">من نحن</h2>
+                    </div>
+                    <p>شركة الآفاق هي اسم رائد في عالم استيراد وتوريد مواد البناء والسباكة في ليبيا. نتميز بكوننا <strong>الموزع المعتمد لشركة فايبر</strong>، و<strong>الوكيل الرسمي لشركة Golden المصرية</strong> المتخصصة في السخانات، بالإضافة إلى <strong>وكالة شركة VERON</strong>.</p>
+                    <p>منذ انطلاقنا من مقرنا في جمعية الدعوة الإسلامية، وضعنا الجودة نصب أعيننا، لنوفر لعملائنا أفضل حلول البناء والمواد الصحية التي تجمع بين الكفاءة والتصميم العصري.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="اجتماع عمل">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vision-goals">
+        <div class="container">
+            <div class="vg-grid">
+                <div class="vg-card">
+                    <i class="fa-solid fa-medal"></i>
+                    <h3>جودة الوكالات</h3>
+                    <p>نحرص على تمثيل الشركات التي تقدم ضمانات حقيقية وأداءً متفوقاً مثل سخانات غولدن ومنتجات فايبر وفيرون.</p>
+                </div>
+                <div class="vg-card">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                    <h3>تنوع المنتجات</h3>
+                    <p>من حديد البناء إلى أرقى أطقم السباكة ومعدات الورش المتطورة تحت سقف واحد.</p>
+                </div>
+                <div class="vg-card">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>دعم العملاء</h3>
+                    <p>نقدم استشارات فنية لعملائنا لاختيار المعدات والمواد الأنسب لمشاريعهم الإنشائية والمهنية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>منتجاتنا وخدماتنا</h2>
+            </div>
+            <div class="services-grid">
+                
+                <!-- الخدمة 1 -->
+                <div class="service-card">
+                    <div class="service-img img-building"></div>
+                    <div class="service-content">
+                        <h3>مواد البناء الأساسية</h3>
+                        <p>نستورد كافة أنواع مواد البناء من إسمنت، حديد تسليح، طوب، وعوازل بمواصفات عالمية تضمن متانة وسلامة المشاريع الإنشائية.</p>
+                    </div>
+                </div>
+
+                <!-- الخدمة 2 -->
+                <div class="service-card">
+                    <div class="service-img img-sanitary"></div>
+                    <div class="service-content">
+                        <h3>المواد الصحية ومستلزمات السباكة</h3>
+                        <p>تشكيلة واسعة وراقية من الأطقم الصحية، الأنابيب، المحابس، وخلاطات المياه من أفضل العلامات التجارية التي تضمن الأناقة والعمر الطويل.</p>
+                    </div>
+                </div>
+
+                <!-- الخدمة 3 -->
+                <div class="service-card">
+                    <div class="service-img img-tools"></div>
+                    <div class="service-content">
+                        <h3>معدات الورش الصناعية</h3>
+                        <p>نوفر أحدث المعدات والأدوات الكهربائية واليدوية المخصصة للورش الصناعية والمهنيين، لتسهيل الأعمال وزيادة الإنتاجية بدقة عالية.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">تواصل معنا الآن</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <h4>مقر الشركة</h4>
+                    <p>جمعية الدعوة الاسلامية</p>
+                    <p>المحلات رقم (209, 210, 211, 212)</p>
+                </div>
+                <div class="contact-box">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h4>المبيعات والاستفسار</h4>
+                    <p style="direction: ltr;">092 607 7470</p>
+                </div>
+                <div class="contact-box">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>ساعات العمل</h4>
+                    <p>السبت - الخميس</p>
+                    <p>من 9:00 صباحاً - 8:00 مساءً</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2024 شركة الآفاق - وكيل معتمد (FIBER - GOLDEN - VERON)</p>
+        </div>
+    </footer>
+
+</body>
+</html>
