@@ -169,14 +169,19 @@
 
         .agency-img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             overflow: hidden;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
         }
 
         .agency-img img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: var(--transition);
         }
 
@@ -376,6 +381,171 @@
             .nav-links { display: none; }
             .hero h1 { font-size: 2.5rem; }
             .about-content { flex-direction: column; }
+            .brand-showcase { flex-direction: column; }
+            .product-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ===== قسم شركة ROUMEN ===== */
+        .roumen-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+        }
+
+        .brand-showcase {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .brand-logo-box {
+            min-width: 220px;
+            text-align: center;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 35px 30px;
+            border-radius: 12px;
+        }
+
+        .brand-logo-box h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .brand-logo-box p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 1px;
+        }
+
+        .brand-text h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .brand-text p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .brand-text strong {
+            color: var(--primary-color);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 35px 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+
+        .product-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .product-card > p {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 18px;
+        }
+
+        .features-list li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list li i {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #eef2ff;
+            color: var(--primary-color);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 1px solid #c7d2fe;
+        }
+
+        .catalogue-download {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .catalogue-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 15px 35px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 6px 20px rgba(26, 54, 93, 0.3);
+        }
+
+        .catalogue-btn:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(234, 179, 8, 0.3);
+        }
+
+        .catalogue-btn i {
+            font-size: 1.3rem;
         }
     </style>
 </head>
@@ -392,6 +562,7 @@
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#agencies">الوكالات</a></li>
                     <li><a href="#about">من نحن</a></li>
+                    <li><a href="#roumen">ROUMEN</a></li>
                     <li><a href="#products">المنتجات</a></li>
                     <li><a href="#contact">التواصل</a></li>
                 </ul>
@@ -484,6 +655,81 @@
                     <h3>دعم العملاء</h3>
                     <p>نقدم استشارات فنية لعملائنا لاختيار المعدات والمواد الأنسب لمشاريعهم الإنشائية والمهنية.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+ <!-- قسم شركة ROUMEN -->
+    <section class="roumen-section" id="roumen">
+        <div class="container">
+            <div class="section-title">
+                <h2>الوكيل المعتمد لشركة ROUMEN</h2>
+            </div>
+
+            <div class="brand-showcase">
+                <div class="brand-logo-box">
+                    <img src="ROUMEN.jpeg" alt="شعار شركة ROUMEN" style="width: 100%; max-width: 200px; border-radius: 8px; margin-bottom: 15px;">
+                    <h2>ROUMEN</h2>
+                    <p>European Quality Standards</p>
+                </div>
+                <div class="brand-text">
+                    <h3>قلب كل مبنى.. الجودة التي تلامس حياتك</h3>
+                    <p>عندما نتحدث عن المواد الصحية، فإننا نتحدث عن قلب كل مبنى. إنها التفاصيل التي تلامس حياتنا اليومية، من الحمامات والمطابخ إلى أنظمة المياه والصرف الصحي. ولأننا نهتم بأدق التفاصيل، نفخر بكوننا الوكيل المعتمد لشركة <strong>ROUMEN</strong> في ليبيا.</p>
+                    <p>ROUMEN هي علامة تجارية مرادفة للابتكار والجودة الأوروبية الرفيعة، حيث تقدم حلولاً تقنية متطورة تضمن الاستدامة والجمال في آن واحد.</p>
+                </div>
+            </div>
+
+            <div class="product-grid">
+                <!-- منتج 1: قراوت -->
+                <div class="product-card">
+                    <h4>ROUMEN ArmoGrout</h4>
+                    <p>قراوت إسمنتي أكريليكي عالي الجودة، مصمم خصيصًا لفواصل السيراميك والبورسلان، ليمنحك مظهرًا أنيقًا وقوة تدوم لسنوات.</p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check-circle"></i> مقاوم للماء والرطوبة ومضاد للفطريات</li>
+                        <li><i class="fa-solid fa-check-circle"></i> مرونة عالية تمنع التشقق</li>
+                        <li><i class="fa-solid fa-check-circle"></i> ثبات لون ممتاز وسهل التنظيف</li>
+                        <li><i class="fa-solid fa-check-circle"></i> مناسب للاستخدام الداخلي والخارجي</li>
+                    </ul>
+                    <div class="badge-list">
+                        <span class="badge">سيراميك</span>
+                        <span class="badge">بورسلان</span>
+                        <span class="badge">واجهات</span>
+                        <span class="badge">حمامات</span>
+                    </div>
+                    <div style="margin-top: 20px; font-weight: 700; color: var(--primary-color);">
+                        لماذا ArmoGrout؟ جودة أوروبية، لا يسوّد، معتمد لدى المهندسين.
+                    </div>
+                </div>
+
+                <!-- منتج 2: الكولة اليونانية -->
+                <div class="product-card">
+                    <h4>الكولة اليونانية (Greek Adhesive)</h4>
+                    <p>نحن الوكيل الحصري للكولة اليونانية المصنعة من قبل ROUMEN. ضمان لثبات وقوة تركيبات السيراميك والبورسلين والرخام.</p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check-circle"></i> قوة التصاق جبارة</li>
+                        <li><i class="fa-solid fa-check-circle"></i> مقاومة تامة للرطوبة والحرارة</li>
+                        <li><i class="fa-solid fa-check-circle"></i> الخيار الأول للمناطق ذات الحركة العالية</li>
+                        <li><i class="fa-solid fa-check-circle"></i> تمنع مشاكل تفكك البلاط مستقبلاً</li>
+                    </ul>
+                    <div class="badge-list">
+                        <span class="badge">رخام</span>
+                        <span class="badge">أرضيات</span>
+                        <span class="badge">مشاريع تجارية</span>
+                    </div>
+                    <div style="margin-top: 20px; font-weight: 700; color: var(--primary-color);">
+                        استثمر في راحة بالك.. الكولة اليونانية هي الحل الأمثل للثبات الدائم.
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 30px; font-style: italic; color: #64748b;">
+                مثالي لمقاولي التشطيب، شركات مواد البناء، مهندسي الديكور، وأصحاب المنازل الباحثين عن التميز.
+            </p>
+
+            <div class="catalogue-download">
+                <a href="Roumen 2024 EN Catalogue.pdf" target="_blank" class="catalogue-btn">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    تحميل كتالوج ROUMEN 2024
+                </a>
             </div>
         </div>
     </section>
